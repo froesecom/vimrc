@@ -2,6 +2,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Add fuzzy find to runtime path
@@ -20,9 +23,9 @@ endif
 " Add numbers to left on startup
 set number
 
-" Make tree look nicer
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
+" ALE config
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 
 " Typescript-vim settings
 let g:typescript_indent_disable = 1
@@ -31,9 +34,11 @@ au FileType typescript setl sw=2 sts=2 et
 " Allow opening of new tabs in Ripgrep
 autocmd FileType qf nnoremap <buffer> <C-T> <C-W><Enter><C-W>T
 
-" Leaders
+" LEADERS
 :let mapleader = " "
-:nnoremap <leader>r :Vex 25<CR> " Open tree
+
+" Open Nerdtree
+nnoremap <leader>r :NERDTreeFind<CR>
 
 " ERB tags
 nnoremap <leader>w i<%  %><Esc>hhha
