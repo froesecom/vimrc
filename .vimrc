@@ -9,9 +9,9 @@ call plug#end()
 
 " Add fuzzy find to runtime path
 set runtimepath^=~/.vim/plugged/ctrlp.vim
- 
+
 " Ignore files and folders in Ctrl+P
-:set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 
 " Use ripgrep for CtrlP fuzzy fine
 if executable('rg')
@@ -20,10 +20,11 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" Add numbers to left on startup
-set number
+set number " Add numbers to left on startup
+set incsearch " Find in file as you type
 
 " ALE config
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
