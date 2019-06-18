@@ -4,6 +4,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'sheerun/vim-polyglot'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Comment out things
@@ -50,7 +52,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint', 'prettier'],
-\   'typescript': ['eslint', 'prettier', 'tslint'],
+\   'typescript': ['tslint', 'prettier'],
 \   'ruby': ['prettier'],
 \}
 
@@ -60,6 +62,9 @@ au FileType typescript setl sw=2 sts=2 et
 
 " Allow opening of new tabs in Ripgrep
 autocmd FileType qf nnoremap <buffer> <C-T> <C-W><Enter><C-W>T
+
+" Treat jsx files and tsx for syntax highlighting
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 " LEADERS
 :let mapleader = " "
