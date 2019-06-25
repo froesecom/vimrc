@@ -4,8 +4,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'sheerun/vim-polyglot'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Comment out things
@@ -63,9 +61,6 @@ au FileType typescript setl sw=2 sts=2 et
 " Allow opening of new tabs in Ripgrep
 autocmd FileType qf nnoremap <buffer> <C-T> <C-W><Enter><C-W>T
 
-" Treat jsx files and tsx for syntax highlighting
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-
 " LEADERS
 :let mapleader = " "
 
@@ -75,6 +70,9 @@ nnoremap <leader>r :NERDTreeFind<CR>
 " ERB tags
 nnoremap <leader>w i<%  %><Esc>hhha
 nnoremap <leader>e i<%=  %><Esc>F=la
+
+" console.log
+nnoremap <leader>c iconsole.log()<Esc>ha
 
 " COCKVIM STUFF BELOW
 " if hidden is not set, TextEdit might fail.
