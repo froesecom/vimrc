@@ -3,6 +3,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
@@ -25,6 +26,9 @@ set diffopt+=vertical
 " Change default formatting options
 au BufEnter * set fo=tq " don't start new line with comment when pressing 'o'
 
+" vim-jsx-pretty settings
+let g:polyglot_disabled = ['jsx', 'tsx']
+
 " Use ripgrep for CtrlP fuzzy fine
 if executable('rg')
   set grepprg=rg\ --color=never
@@ -41,7 +45,7 @@ endif
 set number " Add numbers to left on startup
 set incsearch " Find in file as you type
 set bs=2 " allow backspace
-set tabstop=2 " make tabs two spaces
+set tabstop=2 shiftwidth=2 expandtab " make tabs two spaces
 
 " ALE config
 let g:ale_lint_on_text_changed = 'never'
