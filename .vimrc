@@ -8,6 +8,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Comment out things
+Plug 'mattn/emmet-vim'
 function FixupBase16(info)
     !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
 endfunction
@@ -28,6 +29,10 @@ au BufEnter * set fo=tq " don't start new line with comment when pressing 'o'
 
 " vim-jsx-pretty settings
 let g:polyglot_disabled = ['jsx', 'tsx']
+
+" Only use HTML/CSS for Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " Use ripgrep for CtrlP fuzzy fine
 if executable('rg')
