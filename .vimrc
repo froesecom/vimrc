@@ -24,6 +24,7 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 " Set diff vertical
 set diffopt+=vertical
 
+
 " Change default formatting options
 au BufEnter * set fo=tq " don't start new line with comment when pressing 'o'
 
@@ -164,3 +165,9 @@ augroup end
 
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Disable bleep noises everwhere
+set visualbell t_vb=
+if has("autocmd") && has("gui")
+    au GUIEnter * set t_vb=
+endif
