@@ -25,6 +25,9 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 " Set diff vertical
 set diffopt+=vertical
 
+" Set default fold levels
+set foldmethod=indent
+set foldlevel=1
 
 " Change default formatting options
 au BufEnter * set fo=tq " don't start new line with comment when pressing 'o'
