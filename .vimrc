@@ -9,6 +9,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Comment out things
 Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim' " Read and adhere to .editorconf files
 function FixupBase16(info)
     !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
 endfunction
