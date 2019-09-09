@@ -7,6 +7,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround' " Quoting/parenthesizing
 Plug 'tpope/vim-commentary' " Comment out things
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim' " Read and adhere to .editorconf files
@@ -26,8 +27,8 @@ set wildignore+=*/tmp/*,*/node_modules/*,*.so,*.swp,*.zip
 set diffopt+=vertical
 
 " Set default fold levels
-set foldmethod=indent
-set foldlevel=1
+" set foldmethod=indent
+" set foldlevel=1
 
 " Change default formatting options
 au BufEnter * set fo=tq " don't start new line with comment when pressing 'o'
