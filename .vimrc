@@ -156,6 +156,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+" Map F1 to nothing so it doesn't bring up help when I accidentally press it
+nnoremap <F1> <Nop>
+
 " Remap for format selected region
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
