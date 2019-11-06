@@ -7,6 +7,7 @@ rename this .vim
 
 ## To install plugins
 
+- Install [vim-plug](https://github.com/junegunn/vim-plug)
 - `:PlugInstall`.
 - Plugins are defined in `.vimrc`
 
