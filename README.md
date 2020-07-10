@@ -12,7 +12,7 @@ rename this .vim
 - Plugins are defined in `.vimrc`
 
 # Relink vimrc
-$ ln -s ~/.vim/vimrc/.vimrc ~/.vimrc
+$ ln -s ~/.vim/.vimrc ~/.vimrc
 
 $ ln -s ~/.vim/gvimrc ~/.gvimrc
 
