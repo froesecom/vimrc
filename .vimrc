@@ -14,11 +14,18 @@ Plug 'tpope/vim-surround' " Quoting/parenthesizing
 Plug 'tpope/vim-commentary' " Comment out things
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim' " Read and adhere to .editorconf files
+Plug 'folke/which-key.nvim'
+
 function FixupBase16(info)
     !sed -i '/Base16hi/\! s/a:\(attr\|guisp\)/l:\1/g' ~/.vim/plugged/base16-vim/colors/*.vim
 endfunction
 Plug 'chriskempson/base16-vim', { 'do': function('FixupBase16') }
 call plug#end()
+
+
+lua << EOF
+require("which-key").setup({})  -- basic initialization
+EOF
 
 " Add fuzzy find to runtime path
 set runtimepath^=~/.vim/plugged/ctrlp.vim
@@ -53,7 +60,9 @@ endif
 
 " Cursor style
 set guicursor=n-v-c-i:blinkon250-Cursor
-highlight CursorLine ctermbg=100
+" highlight CursorLine ctermbg=100
+highlight CursorLine guisp=Yellow
+
 
 set number " Add numbers to left on startup
 set incsearch " Find in file as you type
